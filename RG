@@ -3,3 +3,16 @@ So first of all i'm creating resource group via Azure CLI. (At the beggining i'v
 Now i'm creatting RG :
 
 az group create --location westeurope --name SentiaResourceMF
+
+
+Got following output: 
+
+"id": "/subscriptions/11e3550d-8452-421f-85b7-8aadc1a4a2bf/resourceGroups/SentiaResourceMF",
+  "location": "westeurope",
+  "managedBy": null,
+  "name": "SentiaResourceMF",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": null
