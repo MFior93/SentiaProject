@@ -1,0 +1,74 @@
+Now i'm making storage account under the resource group i made previously 
+
+az storage account create --name sentiatestfior --resource-group SentiaResourceMF --encryption-services blob --location westeurope --sku Standard_LRS
+
+Making Blob storage because it can be enrypted . 
+As i remember from 2017 all data can be encrypted by Key Vault but by default only blob and files can be encrypted . 
+Also i could make my own keys for the storage . 
+
+Got the following output : 
+
+{
+  "accessTier": null,
+  "creationTime": "2019-03-19T10:15:36.097817+00:00",
+  "customDomain": null,
+  "enableAzureFilesAadIntegration": null,
+  "enableHttpsTrafficOnly": false,
+  "encryption": {
+    "keySource": "Microsoft.Storage",
+    "keyVaultProperties": null,
+    "services": {
+      "blob": {
+        "enabled": true,
+        "lastEnabledTime": "2019-03-19T10:15:36.191539+00:00"
+      },
+      "file": {
+        "enabled": true,
+        "lastEnabledTime": "2019-03-19T10:15:36.191539+00:00"
+      },
+      "queue": null,
+      "table": null
+    }
+  },
+  "failoverInProgress": null,
+  "geoReplicationStats": null,
+  "id": "/subscriptions/11e3550d-8452-421f-85b7-8aadc1a4a2bf/resourceGroups/SentiaResourceMF/providers/Microsoft.Storage/storageAccounts/sentiatestfior",
+  "identity": null,
+  "isHnsEnabled": null,
+  "kind": "Storage",
+  "lastGeoFailoverTime": null,
+  "location": "westeurope",
+  "name": "sentiatestfior",
+  "networkRuleSet": {
+    "bypass": "AzureServices",
+    "defaultAction": "Allow",
+    "ipRules": [],
+    "virtualNetworkRules": []
+  },
+  "primaryEndpoints": {
+    "blob": "https://sentiatestfior.blob.core.windows.net/",
+    "dfs": null,
+    "file": "https://sentiatestfior.file.core.windows.net/",
+    "queue": "https://sentiatestfior.queue.core.windows.net/",
+    "table": "https://sentiatestfior.table.core.windows.net/",
+    "web": null
+  },
+  "primaryLocation": "westeurope",
+  "provisioningState": "Succeeded",
+  "resourceGroup": "SentiaResourceMF",
+  "secondaryEndpoints": null,
+  "secondaryLocation": null,
+  "sku": {
+    "capabilities": null,
+    "kind": null,
+    "locations": null,
+    "name": "Standard_LRS",
+    "resourceType": null,
+    "restrictions": null,
+    "tier": "Standard"
+  },
+  "statusOfPrimary": "available",
+  "statusOfSecondary": null,
+  "tags": {},
+  "type": "Microsoft.Storage/storageAccounts"
+}
