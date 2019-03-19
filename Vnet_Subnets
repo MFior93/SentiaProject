@@ -1,0 +1,108 @@
+After this i'm creating VNet for the RG :
+
+------> az network vnet create -g SentiaResourceMF -n sentiaVnet --address-prefix 172.16.0.0/12
+
+with the following output : 
+{
+  "newVNet": {
+    "addressSpace": {
+      "addressPrefixes": [
+        "172.16.0.0/12"
+      ]
+    },
+    "ddosProtectionPlan": null,
+    "dhcpOptions": {
+      "dnsServers": []
+    },
+    "enableDdosProtection": false,
+    "enableVmProtection": false,
+    "etag": "W/\"ec992d16-d6f9-4d3a-b3bd-bb70a29574ab\"",
+    "id": "/subscriptions/11e3550d-8452-421f-85b7-8aadc1a4a2bf/resourceGroups/SentiaResourceMF/providers/Microsoft.Network/virtualNetworks/sentiaVnet",
+    "location": "westeurope",
+    "name": "sentiaVnet",
+    "provisioningState": "Succeeded",
+    "resourceGroup": "SentiaResourceMF",
+    "resourceGuid": "3aee483f-63e7-4260-8a08-fcd21117d91b",
+    "subnets": [],
+    "tags": {},
+    "type": "Microsoft.Network/virtualNetworks",
+    "virtualNetworkPeerings": []
+  }
+}
+
+Then making subnets :
+
+------> az network vnet subnet create -g SentiaResourceMF --vnet-name sentiaVnet -n sentiasubnet1 --address-prefixes 172.16.2.0/24
+
+{
+  "addressPrefix": "172.16.2.0/24",
+  "addressPrefixes": null,
+  "delegations": [],
+  "etag": "W/\"86ecb244-2e1e-4818-9901-725d28806cd8\"",
+  "id": "/subscriptions/11e3550d-8452-421f-85b7-8aadc1a4a2bf/resourceGroups/SentiaResourceMF/providers/Microsoft.Network/virtualNetworks/sentiaVnet/subnets/sentiasubnet1"
+,
+  "interfaceEndpoints": null,
+  "ipConfigurationProfiles": null,
+  "ipConfigurations": null,
+  "name": "sentiasubnet1",
+  "networkSecurityGroup": null,
+  "provisioningState": "Succeeded",
+  "purpose": null,
+  "resourceGroup": "SentiaResourceMF",
+  "resourceNavigationLinks": null,
+  "routeTable": null,
+  "serviceAssociationLinks": null,
+  "serviceEndpointPolicies": null,
+  "serviceEndpoints": null,
+  "type": "Microsoft.Network/virtualNetworks/subnets"
+}
+
+------> az network vnet subnet create -g SentiaResourceMF --vnet-name sentiaVnet -n sentiasubnet2 --address-prefixes 172.16.3.0/24
+
+{
+  "addressPrefix": "172.16.3.0/24",
+  "addressPrefixes": null,
+  "delegations": [],
+  "etag": "W/\"a8019c8b-ddc5-4cab-83b0-acfd1a4471f0\"",
+  "id": "/subscriptions/11e3550d-8452-421f-85b7-8aadc1a4a2bf/resourceGroups/SentiaResourceMF/providers/Microsoft.Network/virtualNetworks/sentiaVnet/subnets/sentiasubnet2"
+,
+  "interfaceEndpoints": null,
+  "ipConfigurationProfiles": null,
+  "ipConfigurations": null,
+  "name": "sentiasubnet2",
+  "networkSecurityGroup": null,
+  "provisioningState": "Succeeded",
+  "purpose": null,
+  "resourceGroup": "SentiaResourceMF",
+  "resourceNavigationLinks": null,
+  "routeTable": null,
+  "serviceAssociationLinks": null,
+  "serviceEndpointPolicies": null,
+  "serviceEndpoints": null,
+  "type": "Microsoft.Network/virtualNetworks/subnets"
+}
+
+------> az network vnet subnet create -g SentiaResourceMF --vnet-name sentiaVnet -n sentiasubnet3 --address-prefixes 172.16.4.0/24
+
+{
+  "addressPrefix": "172.16.4.0/24",
+  "addressPrefixes": null,
+  "delegations": [],
+  "etag": "W/\"2a3115e6-6d3c-44c3-ba7e-71fb4579dbf7\"",
+  "id": "/subscriptions/11e3550d-8452-421f-85b7-8aadc1a4a2bf/resourceGroups/SentiaResourceMF/providers/Microsoft.Network/virtualNetworks/sentiaVnet/subnets/sentiasubnet3"
+,
+  "interfaceEndpoints": null,
+  "ipConfigurationProfiles": null,
+  "ipConfigurations": null,
+  "name": "sentiasubnet3",
+  "networkSecurityGroup": null,
+  "provisioningState": "Succeeded",
+  "purpose": null,
+  "resourceGroup": "SentiaResourceMF",
+  "resourceNavigationLinks": null,
+  "routeTable": null,
+  "serviceAssociationLinks": null,
+  "serviceEndpointPolicies": null,
+  "serviceEndpoints": null,
+  "type": "Microsoft.Network/virtualNetworks/subnets"
+}
