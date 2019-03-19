@@ -1,0 +1,38 @@
+I haven't play with policies even in my current job so i think that i will need some more time to think about it and make it . 
+
+I made an policy for ResourceTypes but it's working other way around : 
+
+{
+  "mode": "all",
+  "policyRule": {
+    "if": {
+      "not": {
+        "field": "type",
+        "in": "[parameters('listOfResourceTypesAllowed')]"
+      }
+    },
+    "then": {
+      "effect": "deny"
+    }
+  },
+  "parameters": {
+    "listOfResourceTypesAllowed": {
+      "type": "Array",
+      "metadata": {
+        "displayName": "Allowed resource types",
+        "description": "The list of resource types that can be deployed.",
+        "strongType": "resourceTypes"
+      },
+      "allowedValues": [
+        "Microsoft.Compute",
+        "Microsoft.Network",
+        "Microsoft.Storage"
+      ]
+    }
+  }
+}
+
+When i assign the policy and check the boxes for Compute , Network or Storage it's blocking them . 
+I assume that it's because in the "effect" line there is "DENY" and i need to make more research about it how to revert it . 
+
+Assigning the policy via the portal is very easy and i did that before . 
