@@ -1,0 +1,65 @@
+Now i have to create tags 
+
+az tag create --name Company
+az tag add-value --name Company --value sentia
+az tag create --name Environment
+az tag add-value --name Environment --value test
+
+I'm running the script with the following output : 
+
+{
+  "count": {
+    "type": "Total",
+    "value": 0
+  },
+  "id": "/subscriptions/11e3550d-8452-421f-85b7-8aadc1a4a2bf/tagNames/Company",
+  "tagName": "Company",
+  "values": []
+}
+{
+  "count": {
+    "type": "Total",
+    "value": 0
+  },
+  "id": "/subscriptions/11e3550d-8452-421f-85b7-8aadc1a4a2bf/tagNames/Company/tagValues/sentia",
+  "tagValue": "sentia"
+}
+{
+  "count": {
+    "type": "Total",
+    "value": 0
+  },
+  "id": "/subscriptions/11e3550d-8452-421f-85b7-8aadc1a4a2bf/tagNames/Environment",
+  "tagName": "Environment",
+  "values": []
+}
+{
+  "count": {
+    "type": "Total",
+    "value": 0
+  },
+  "id": "/subscriptions/11e3550d-8452-421f-85b7-8aadc1a4a2bf/tagNames/Environment/tagValues/test",
+  "tagValue": "test"
+}
+
+
+----> Now i have to assign the tags to the resource 
+
+az group update -n SentiaResourceMF --set tags.Enviroment=test tags.Company=sentia
+
+with the following output: 
+
+{
+  "id": "/subscriptions/11e3550d-8452-421f-85b7-8aadc1a4a2bf/resourceGroups/SentiaResourceMF",
+  "location": "westeurope",
+  "managedBy": null,
+  "name": "SentiaResourceMF",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": {
+    "Company": "sentia",
+    "Enviroment": "test"
+  },
+  "type": null
+}
