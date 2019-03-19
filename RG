@@ -1,0 +1,5 @@
+So first of all i'm creating resource group via Azure CLI. (At the beggining i've installed the Azure CLI to my powershell)
+
+Now i'm creatting RG :
+
+az group create --location westeurope --name SentiaResourceMF
